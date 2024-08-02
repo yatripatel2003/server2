@@ -1,11 +1,10 @@
-<b><h2>Automated Email Scheduling API<h2></b>
-<br>
+<b><h1>Automated Email Scheduling API<h1></b>
 <br>
 <b><h3>Overview</h3></b>
 <br>
-The Automated Email Scheduling API allows users to schedule emails for automatic delivery at specified times. This API supports both one-time email scheduling and recurring email scheduling, providing flexibility in managing email communications. It includes features to handle various scheduling needs such as daily, weekly, monthly, and quarterly recurring emails.
+The Automated Email Scheduling API allows users to schedule emails for automatic delivery at specified times. This API supports both one-time and recurring email scheduling, providing flexibility in managing email communications. It includes features to handle various scheduling needs such as daily, weekly, monthly, and quarterly recurring emails.
 <br>
-<b><h3>Features</h3></b>
+<b><h4>Features</h4></b>
 <br>
 <b>Email Scheduling:</b> Schedule emails to be sent at a specific date and time.<br>
 <b>Recurring Emails:</b> Set up emails to recur on a daily, weekly, monthly, or quarterly basis.<br>
@@ -22,7 +21,6 @@ Attachments (if any).<br>
 API Endpoints
 The API provides the following RESTful endpoints:
 
-
 ## Approach
 
 ### Design and Implementation
@@ -31,12 +29,19 @@ The API provides the following RESTful endpoints:
    - Used Mongoose to define a schema for storing email scheduling details in MongoDB.
    - The schema includes fields for recipient, subject, body, schedule time, recurrence details, and attachments.
      ![image](https://github.com/user-attachments/assets/462723cd-90a4-4dc9-9351-ec65f9945c99)
+  
+     
      ![image](https://github.com/user-attachments/assets/cff8b9b7-f870-4f27-9b52-b3ab43db7961)
+
+     ![image](https://github.com/user-attachments/assets/689cebe4-f5c7-42ba-b08e-0e8b35833631)
+
+
+     
 
      
 2. **Email Scheduling**:
    - Implemented a function to handle one-time email scheduling using the `node-cron` library.
-   - Converted the specified schedule time into a cron format and set up a cron job to trigger the email sending function at the appropriate time.
+   - Converted the specified schedule time into a cron format and set up a cron job to trigger the email-sending function at the appropriate time.
    - ![image](https://github.com/user-attachments/assets/25d7c048-6f68-44b4-bb0a-8e73c22ebd28)
 
 
@@ -46,7 +51,7 @@ The API provides the following RESTful endpoints:
 
 4. **API Endpoints**:
    - **POST /schedule-email**: Allows users to schedule a new email, either for a one-time delivery or recurring delivery based on the provided details.
-   - **GET /scheduled-emails**: Retrieves a list of all scheduled emails.
+   - **GET /scheduled emails**: Retrieves a list of all scheduled emails.
    - **GET /scheduled-emails/{id}**: Retrieves details of a specific scheduled email using its ID.
    - **DELETE /scheduled-emails/{id}**: Cancels a scheduled email by its ID.
 
@@ -91,5 +96,10 @@ The API provides the following RESTful endpoints:
 ## Setup
 
 To set up and run the project locally, follow https://github.com/yatripatel2003/server2 and then go to server2.js, copy the code, and write node server.js in the console.
+
+Also deployed it on Vercel, but is giving an error.Below is the link
+
+https://server2-zh4m-6q360tkja-yatris-projects.vercel.app/
+
 
 
