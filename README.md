@@ -30,10 +30,15 @@ The API provides the following RESTful endpoints:
 1. **Schema Design**:
    - Used Mongoose to define a schema for storing email scheduling details in MongoDB.
    - The schema includes fields for recipient, subject, body, schedule time, recurrence details, and attachments.
+     ![image](https://github.com/user-attachments/assets/462723cd-90a4-4dc9-9351-ec65f9945c99)
+     ![image](https://github.com/user-attachments/assets/cff8b9b7-f870-4f27-9b52-b3ab43db7961)
 
+     
 2. **Email Scheduling**:
    - Implemented a function to handle one-time email scheduling using the `node-cron` library.
    - Converted the specified schedule time into a cron format and set up a cron job to trigger the email sending function at the appropriate time.
+   - ![image](https://github.com/user-attachments/assets/25d7c048-6f68-44b4-bb0a-8e73c22ebd28)
+
 
 3. **Recurring Emails**:
    - Developed functions to handle recurring email scheduling based on daily, weekly, monthly, and quarterly frequencies.
@@ -57,62 +62,34 @@ The API provides the following RESTful endpoints:
 ### 1. **POST /schedule-email**
    - **Description**: Schedule an email to be sent at a specific date and time. Allows for both one-time and recurring email scheduling.
    - **Request Body**:
-     ```json
-     {
-       "recipient": "recipient@example.com",
-       "subject": "Email Subject",
-       "body": "Email Body",
-       "scheduleTime": "2024-08-03T10:00:00.000Z",
-       "recurring": {
-         "frequency": "daily", // Options: daily, weekly, monthly, quarterly
-         "time": "15:17", // Optional: Time of the day in HH:MM format
-         "day": "Monday" // Optional: Day of the week or month
-       },
-       "attachments": ["path/to/attachment1", "path/to/attachment2"]
-     }
-     ```
+   - POST http://localhost:3018/schedule-email
+     ![image](https://github.com/user-attachments/assets/d395f1af-848d-4884-a68b-0903e37fe06c)
+
 
 ### 2. **GET /scheduled-emails**
    - **Description**: Retrieve a list of all scheduled emails.
    - **Response**:
-     ```json
-     [
-       {
-         "id": "email_id",
-         "recipient": "recipient@example.com",
-         "subject": "Email Subject",
-         "body": "Email Body",
-         "scheduleTime": "2024-08-03T10:00:00.000Z",
-         "recurring": {
-           "frequency": "daily",
-           "time": "15:17"
-         },
-         "attachments": ["path/to/attachment1", "path/to/attachment2"]
-       }
-     ]
-     ```
+   - GET http://localhost:3018/schedule-email
+     ![image](https://github.com/user-attachments/assets/bb5821d3-41d0-4f00-8477-00f5eb3ecde2)
+
 
 ### 3. **GET /scheduled-emails/{id}**
    - **Description**: Retrieve details of a specific scheduled email by its ID.
    - **Response**:
-     ```json
-     {
-       "id": "email_id",
-       "recipient": "recipient@example.com",
-       "subject": "Email Subject",
-       "body": "Email Body",
-       "scheduleTime": "2024-08-03T10:00:00.000Z"
-     }
-     ```
+     GET http://localhost:3018/schedule-email/66acb5bbbac53f217dc40330
+     ![image](https://github.com/user-attachments/assets/56e4bee9-1469-4b6d-bda5-c04a41a6829b)
+
 
 ### 4. **DELETE /scheduled-emails/{id}**
    - **Description**: Cancel a scheduled email by its ID.
-   - **Response**: Returns HTTP status 204 if the email was successfully deleted.
+   - **Response**:
+   - DELETE http://localhost:3018/schedule-email/66acb5bbbac53f217dc40330
+   - ![image](https://github.com/user-attachments/assets/eb3ff572-ad7e-4bf9-9aea-441f80b0ffca)
 
-## Installation and Setup
+     
 
-To set up and run the project locally, follow these steps:
+## Setup
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/your-username/your-repository.git
+To set up and run the project locally, follow https://github.com/yatripatel2003/server2 and then go to server2.js, copy the code, and write node server.js in the console.
+
+
